@@ -1,9 +1,13 @@
 <?php
+$host = "localhost"; // Database host
+$user = "root";      // Database gebruiker
+$password = "";      // Database wachtwoord
+$database = "thuiszorg_reservering"; // Naam van de database
 
-$host = $_ENV['DATABASE_HOST'];
-$database = $_ENV['DATABASE_NAME'];
-$user = $_ENV['DATABASE_USER'];
-$password = $_ENV['DATABASE_PASSWORD'];
+// Maak verbinding met de database
+$db = mysqli_connect($host, $user, $password, $database);
 
-$db = mysqli_connect($host, $user, $password, $database)
-or die('Error: ' . mysqli_connect_error());
+if (!$db) {
+    die("Databaseverbinding mislukt: " . mysqli_connect_error());
+}
+?>
