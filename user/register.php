@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+// Databaseverbinding
+$host = '127.0.0.1';
+$username = 'root';
+$password = '';
+$database = 'martinez_zorg';
 require_once '../includes/database.php';
 
 $errors = [];
